@@ -41,7 +41,7 @@ Instructions
   sudo nano /etc/rc.local
   ```
   
-    - Replace "TenCharKey" with your choice of WEP key for your AdHoc network, but make sure that it's ten characters
+    - Replace "TenCharKey" with your choice of WEP key for your AdHoc network, but make sure that it's ten hexadecimal characters
     - Replace "YourSSIDHere" with your choice of SSID for your AdHoc network
 
 7. Reboot

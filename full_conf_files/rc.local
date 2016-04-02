@@ -16,6 +16,7 @@ createAdHocNetwork(){
     echo "Creating ad-hoc network"
     ifconfig wlan0 down
     iwconfig wlan0 mode ad-hoc
+    iwconfig wlan0 enc on
     iwconfig wlan0 key TenCharKey #WEP key
     iwconfig wlan0 essid YourSSIDHere      #SSID
     ifconfig wlan0 10.0.0.200 netmask 255.255.255.0 up
