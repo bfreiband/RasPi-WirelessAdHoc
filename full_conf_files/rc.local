@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+# createAdHocNetwork: does pretty much what it says on the tin
+createAdHocNetwork(){
+    echo "Creating ad-hoc network"
+    ifconfig wlan0 down
+    iwconfig wlan0 mode ad-hoc
+    iwconfig wlan0 key TenCharKey #WEP key
+    iwconfig wlan0 essid YourSSIDHere      #SSID
+    ifconfig wlan0 10.0.0.200 netmask 255.255.255.0 up
+    /usr/sbin/dhcpd wlan0
+    echo "Ad-hoc network created"
+}
+
+createAdHocNetwork
+
+exit 0
